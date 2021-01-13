@@ -1,0 +1,36 @@
+.text-verify {
+    color: $gray-300;
+    @include font-size(12px);
+
+    i {
+        color: $primary;
+    }
+}
+
+.text-view-more {
+    color: $primary;
+    @include font-size(14px);
+
+    &::after {
+        content: '';
+        background: $icon-arrow-long no-repeat center / contain;
+        display: inline-block;
+        margin-left: rem(10px);
+        height: rem(11px);
+        width: rem(18px);
+    }
+}
+
+.text-date {
+    color: $gray-300;
+    @include font-size(14px);
+    font-style: italic;
+}
+
+.disabled {
+    pointer-events: none;
+}
+
+.btn-show-hide {
+    @include font-size(14px);
+}

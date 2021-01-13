@@ -1,0 +1,246 @@
+.icon-tel {
+    background-image: escape-svg($icon-tel);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    height: 17px;
+    width: 17px;
+
+    &--white {
+        background-image: escape-svg($icon-tel-white);
+    }
+}
+
+.icon-fb {
+    background-image: escape-svg($icon-fb);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    height: 18.63px;
+    width: 8.68px;
+
+    a:hover & {
+        background-image: escape-svg($icon-fb-primary);
+    }
+
+    &--white {
+        background-image: escape-svg($icon-fb-white);
+    }
+}
+
+.icon-zalo {
+    background-image: escape-svg($icon-zalo);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    height: 18.63px;
+    width: 19.63px;
+
+    a:hover & {
+        background-image: escape-svg($icon-zalo-primary);
+    }
+
+    &--white {
+        background-image: escape-svg($icon-zalo-white);
+    }
+}
+
+.icon-tele {
+    background-image: escape-svg($icon-tele);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    height: 18.25px;
+    width: 23.89px;
+
+    a:hover & {
+        background-image: escape-svg($icon-tele-primary);
+    }
+
+    &--white {
+        background-image: escape-svg($icon-tele-white);
+    }
+}
+
+.icon-arrow-long-gray {
+    background-image: escape-svg($icon-arrow-long-gray);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    height: 10px;
+    width: 17.43px;
+}
+
+.icon-arrow-long-white {
+    background-image: escape-svg($icon-arrow-long-white);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    height: 10px;
+    width: 17.43px;
+}
+
+.icon-search-white {
+    display: inline-block;
+
+    &::after {
+        content: '';
+        background: url('../images/icons/icon-search.svg') no-repeat center / contain;
+        display: block;
+        height: 14.25px;
+        width: 14.25px;
+    }
+}
+
+.icon-search-primary {
+    display: block;
+
+    &::after {
+        content: '';
+        background: url('../images/icons/icon-search-green.svg') no-repeat center / contain;
+        display: block;
+        height: 16px;
+        width: 16px;
+
+        @include media-breakpoint-up('md') {
+            height: 14.25px;
+            width: 14.25px;
+        }
+    }
+}
+
+.icon-tick {
+    background: escape-svg($icon-tick) no-repeat center / contain;
+    display: inline-block;
+    height: 14.76px;
+    width: 19.36px;
+}
+
+.icon-x {
+    background: escape-svg($icon-x) no-repeat center / contain;
+    display: inline-block;
+    height: 14.76px;
+    width: 19.36px;
+}
+
+.icon-search {
+    background: escape-svg($icon-search) no-repeat center / contain;
+    display: inline-block;
+    height: 13.34px;
+    width: 13.34px;
+    vertical-align: middle;
+}
+
+.icon-search2 {
+    background: escape-svg($icon-search2) no-repeat center / contain;
+    display: inline-block;
+    height: 18px;
+    width: 18px;
+    vertical-align: middle;
+
+    .nav-item.active & {
+        background-image: escape-svg($icon-search2-primary);
+    }
+}
+
+.icon-review {
+    background: escape-svg($icon-star) no-repeat center / contain;
+    display: inline-block;
+    height: 18px;
+    width: 19px;
+
+    .nav-item.active & {
+        background-image: escape-svg($icon-star-primary);
+    }
+}
+
+.icon-exchange {
+    background: escape-svg($icon-exchange) no-repeat center / contain;
+    display: inline-block;
+    height: 18px;
+    width: 18px;
+
+    .nav-item.active & {
+        background-image: escape-svg($icon-exchange-primary);
+    }
+}
+
+.icon-exchange-primary {
+    background: escape-svg($icon-exchange-primary) no-repeat center / contain;
+    display: inline-block;
+    height: 18px;
+    width: 18px;
+    vertical-align: middle;
+
+    @include media-breakpoint-up('md') {
+        .btn:hover & {
+            background-image: escape-svg($icon-exchange-white);
+        }
+    }
+
+    .btn:disabled & {
+        background-image: escape-svg($icon-exchange);
+    }
+
+    .font-11 & {
+        height: 14px;
+        width: 14px;
+    }
+}
+
+.icon-chart {
+    background: escape-svg($icon-chart) no-repeat center / contain;
+    display: inline-block;
+    height: 16px;
+    width: 18px;
+
+    .nav-item.active & {
+        background-image: escape-svg($icon-chart-primary);
+    }
+}
+
+.icon-help {
+    background: escape-svg($icon-help) no-repeat center / contain;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+
+    .nav-item.active & {
+        background-image: escape-svg($icon-help-primary);
+    }
+}
+
+.icon-phone {
+    background: escape-svg($icon-phone) no-repeat center / contain;
+    display: inline-block;
+    height: 18px;
+    width: 17.5px;
+
+    .nav-item.active & {
+        background-image: escape-svg($icon-phone-primary);
+    }
+}
+
+.icon-star {
+    &::after {
+        content: '\f006';
+        font-family: FontAwesome;
+        color: $yellow;
+    }    
+}
+
+.icon-eye {
+    background-image: escape-svg($icon-eye);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    height: 9.71px;
+    width: 15.24px;
+}

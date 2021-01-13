@@ -1,0 +1,22 @@
+.btn-primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    height: size(50);
+    font-weight: 500;
+    max-width: size(200);
+    width: 100%;
+
+    @include media-breakpoint-up('md') {
+        height: size(60);
+    }
+
+    &.w-100 {
+        max-width: 100%;
+    }
+}
+
+.btn-center {
+    margin: auto;
+}

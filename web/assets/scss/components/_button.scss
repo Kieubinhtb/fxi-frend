@@ -1,0 +1,114 @@
+.btn {
+    outline: none;
+
+    @include media-breakpoint-up('md') {
+        @include font-size(16px);
+    }
+}
+
+.btn-link {
+    &:focus {
+        box-shadow: none !important;
+    }
+}
+
+.btn-small-size {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    @include font-size(14px);
+    height: rem(30px);
+    max-width: rem(110px);
+    width: 100%;
+
+    @include media-breakpoint-up('md') {
+        @include font-size(14px);
+    }
+}
+
+.btn-medium-size {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: rem(40px);
+    max-width: rem(150px);
+    width: 100%;
+}
+
+.btn-large-size {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: rem(40px);
+    max-width: rem(130px);
+    width: 100%;
+
+    @include media-breakpoint-up('md') {
+        height: rem(50px);
+        max-width: rem(200px);
+    }
+}
+
+.btn-more-circle {
+    border: 1px solid $primary;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: $primary;
+    height: rem(32px);
+    width: rem(32px);
+
+    @include hover() {
+        background-color: $primary;
+        color: $white;
+    }
+}
+
+.bootstrap-select .dropdown-toggle {
+    &:focus {
+        outline: none !important;
+    }
+}
+
+.btn-tel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    height: rem(40px);
+    width: rem(150px);
+
+    @include media-breakpoint-up('md') {
+        height: rem(50px);
+        width: rem(197px);
+    }
+
+    &:hover {
+        .icon-tel {
+            background-image: $icon-tel-white;
+        }
+
+        .icon-tel--white {
+            background-image: $icon-tel;
+        }
+    }
+}
+
+.btn-font-small {
+    @include font-size(14px);
+}
+
+.btn-fixed {
+    border: 1px solid $white;
+    border-radius: 3px 3px 0 0;
+    display: none;
+    position: fixed;
+    top: 65%;
+    right: 0;
+    @include font-size(14px);
+    padding: rem(8px) rem(16px);
+    transform: rotate(-90deg);
+    transform-origin: rem(17px) rem(-17px);
+    z-index: 500;
+}

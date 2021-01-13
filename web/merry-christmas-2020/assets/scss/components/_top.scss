@@ -1,0 +1,117 @@
+.campaign-top {
+    background: #c80000;
+    background: -moz-linear-gradient(left,  #c80000 0%, #a10000 100%);
+    background: -webkit-linear-gradient(left,  #c80000 0%,#a10000 100%);
+    background: linear-gradient(to right,  #c80000 0%,#a10000 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c80000', endColorstr='#a10000',GradientType=1 );
+    color: $white;
+    padding: 40px 0 63px;
+    height: 400px;
+    position: relative;
+    z-index: 20;
+
+    @include media-breakpoint-up('sm') {
+        height: 430px;
+    }
+
+    @include media-breakpoint-up('md') {
+        height: 540px;
+    }
+
+    @include media-breakpoint-up('xl') {
+        padding-top: 63px;
+        height: 800px;
+    }
+
+    &::before {
+        content: '';
+        background: url('../images/snow-bg02.svg') center top;
+        position: absolute;
+        top: 28px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+    }
+
+    &::after {
+        content: '';
+        background: url('../images/snow-bg01.svg') no-repeat center bottom / 100% auto;
+        position: absolute;
+        bottom: -5vw;
+        left: 0;
+        right: 0;
+        height: 350px;
+        z-index: -2;
+    }
+
+    .logo {
+        margin: 0 auto 60px;
+        max-width: 150px;
+        text-align: center;
+
+        @include media-breakpoint-up('md') {
+            margin-bottom: 100px;
+            max-width: 100%;
+        }
+
+        @include media-breakpoint-up('xl') {
+            margin-bottom: 164px;
+        }
+    }
+
+    .campaign-ttl {
+        @include font-size(20px);
+        font-weight: 600;
+        margin: 0 0 15px;
+
+        @include media-breakpoint-up('md') {
+            @include font-size(36px);
+            margin-bottom: 30px;
+        }
+    }
+
+    .campaign-txt {
+        @include font-size(14px);
+        margin: 0;
+        max-width: 800px;
+
+        @include media-breakpoint-up('md') {
+            @include font-size(18px);
+        }
+    }
+
+    .tree-img {
+        position: absolute;
+        right: 10px;
+        bottom: 0;
+        max-width: 30%;
+        z-index: -1;
+
+        @include media-breakpoint-up('lg') {
+            max-width: 27%;
+        }
+
+        @include media-breakpoint-up('xl') {
+            right: 71px;
+            max-width: 31%;
+        }
+    }
+
+    .santa-img {
+        position: absolute;
+        bottom: -3vw;
+        left: 10px;
+        max-width: 60%;
+
+        @include media-breakpoint-up('md') {
+            max-width: 60%;
+            bottom: -30px;
+        }
+
+        @include media-breakpoint-up('xl') {
+            left: 30px;
+            bottom: -65px;
+        }
+    }
+}

@@ -1,0 +1,89 @@
+#upstream insitesweb{
+#    server unix:/run/gunicorn.sock;
+#}
+
+#server {
+#    server_name fxinsites.com;
+#    charset     UTF-8;
+
+#    access_log  /app/insitesvn/InsitesWeb/nginx-access.log;
+#    error_log   /app/insitesvn/InsitesWeb/nginx-error.log;
+
+#    client_max_body_size       10m;
+#    client_body_buffer_size    16k;
+#    client_header_timeout      30s;
+#    client_body_timeout        60s;
+
+#    send_timeout               60s;
+
+#    location /static/ {
+#        alias /app/insitesvn/InsitesWeb/static/;
+#    }
+
+#    location /media/ {
+#        alias /app/insitesvn/InsitesWeb/media/;
+#    }
+
+#    location / {
+#	    try_files $uri @proxy_to_app;
+#    }
+
+    #Redicrect
+#    include redirect301/redirect301.conf;
+     
+    # Media: images, icons, video, audio, HTC
+    #location ~* \.(?:jpg|jpeg|gif|png|ico|cur|gz|svg|svgz|mp4|ogg|ogv|webm|htc)$ {
+    #    expires 7d;
+    #    access_log off;
+    #    add_header Cache-Control "public";
+    #}
+
+    # CSS and Javascript
+    #location ~* \.(?:css|js)$ {
+    #    expires 1M;
+    #    access_log off;
+    #    add_header Cache-Control "public";
+    #}   
+
+#    location @proxy_to_app {
+#        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+#        proxy_set_header Host $http_host;
+#        proxy_redirect off;	
+#        if (!-f $request_filename) {
+#            proxy_pass http://insitesweb;
+#            break;
+#        }        
+#	    proxy_read_timeout 60s;
+#        proxy_connect_timeout 60s; 
+#        #add_header 'Access-Control-Allow-Origin' '*';
+#        #add_header 'Access-Control-Allow-Credentials' 'true';
+#        #add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
+#        #add_header 'Access-Control-Allow-Headers' 'DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type';
+#        add_header Strict-Transport-Security "max-age=31536000; includeSubDomains; preload";
+#    }
+
+
+
+#   listen [::]:443 ssl ipv6only=on; # managed by Certbot
+#   listen 443 ssl; # managed by Certbot
+#   ssl_certificate /etc/letsencrypt/live/fxinsites.com/fullchain.pem; # managed by Certbot
+#    ssl_certificate_key /etc/letsencrypt/live/fxinsites.com/privkey.pem; # managed by Certbot
+#   include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+#    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+#}
+
+
+
+#server {
+#    if ($host = fxinsites.com) {
+#        return 301 https://$host$request_uri;
+#    } # managed by Certbot
+
+
+#    listen      80;
+#    listen      [::]:80;
+#    server_name fxinsites.com;
+#    return 404; # managed by Certbot
+#}
+

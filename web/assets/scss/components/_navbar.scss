@@ -1,0 +1,13 @@
+#navigation {
+    @include media-breakpoint-down('md') {
+        background-color: #fff;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        overflow: auto;
+        padding: rem(17px) rem(30px) rem(32px) !important;
+        z-index: 10000;
+    }
+}

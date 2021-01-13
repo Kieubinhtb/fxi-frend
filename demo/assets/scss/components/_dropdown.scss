@@ -1,0 +1,133 @@
+.popover-header {
+    background-color: $gray-400;
+    border-radius: 5px;
+    @include font-size(12px);
+    margin: rem(10px) 0;
+
+    button {
+        display: none;
+    }
+}
+
+.bootstrap-select {
+    .popover-header {
+        white-space: nowrap;
+    }
+    
+    .bs-searchbox {
+        order: -2;
+        margin-top: rem(14px);
+        padding: 0;
+    }
+
+    .dropdown-toggle {
+        background-color: transparent;
+        border-color: rgba($gray-300, .3);
+        padding: rem(8px) rem(15px);
+
+        &::after {
+            background: $icon-arrow-down no-repeat center / contain;
+            border: none;
+            height: rem(5px);
+            width: rem(10px);
+        }
+    }
+
+    .bs-ok-default {
+        &::after {
+            border-color: #009b93;
+            border-width: 0 1.5px 1.5px 0;
+            width: 6px;
+            height: 13px;
+            opacity: 0;
+            top: 0px;
+            left: 6px;
+            position: absolute;
+        }
+    }
+
+    > .dropdown-menu {
+        min-width: 100%;
+        padding: 0 rem(10px) rem(10px);
+
+        &.show {
+            display: flex;
+            flex-flow: column;
+        }
+    }
+
+    .dropdown-item {
+        padding-left: 0;
+        padding-right: rem(36px);
+
+        &.active, &:active {
+            background-color: transparent;
+            color: inherit;
+        }
+    }
+
+    .dropdown-menu {
+        > .inner {
+            padding-right: 5px;
+            margin-right: -5px;
+
+            &::-webkit-scrollbar {
+                width: 4px;
+            }
+            
+            /* Track */
+            &::-webkit-scrollbar-track {
+                background: $white;
+            }
+            
+            /* Handle */
+            &::-webkit-scrollbar-thumb {
+                border-radius: 3px;
+                background: rgba($gray-300, .3);
+            }
+        }
+
+        li {
+            &.disabled {
+                background-color: $gray-100;
+                color: inherit;
+            }
+
+            a  {
+                span.check-mark {
+                    display: block;
+                    border: 1px solid rgba($gray-300, .5);
+                    border-radius: 2px;
+                    position: absolute;
+                    right: 0;
+                    top: 5px;
+                    width: rem(20px);
+                    height: rem(20px);
+                    text-align: center;
+                }
+            }    
+        }
+    
+        .selected {
+            .bs-ok-default::after {
+                opacity: 1;
+            }
+        }
+
+        &.inner {
+            overflow-x: hidden;
+        }
+    }
+
+    &.show-tick .dropdown-menu {
+        .selected {
+            a  {
+                span.check-mark {
+                    border-color: $primary;
+                    right: 0;
+                    top: 5px;
+                }
+            }
+        }
+    }
+}

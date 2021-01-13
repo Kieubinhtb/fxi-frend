@@ -1,0 +1,15 @@
+.font-11 {
+    @include font-size(11px !important);
+}
+
+.font-12 {
+    @include font-size(12px !important);
+}
+
+.font-14 {
+    @include font-size(14px !important);
+}
+
+.font-weight-medium {
+    font-weight: $font-weight-medium !important;
+}

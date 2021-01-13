@@ -1,0 +1,34 @@
+img {
+    max-width: 100%;
+}
+
+.img-hover {
+    overflow: hidden;
+    
+    &:hover {
+        img {
+            transform: scale(1.1);
+        }
+    }
+
+    img {
+        transform: scale(1);
+        transition: .3s ease;
+    }
+}
+
+.banner-full {
+    a {
+        width: 100%;
+    }
+}
+
+.no-boxshadow {
+    box-shadow: none !important;
+}
+
+.overflow-md-hidden {
+    @include media-breakpoint-up('md') {
+        overflow: hidden;
+    }
+}

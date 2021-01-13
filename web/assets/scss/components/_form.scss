@@ -1,0 +1,111 @@
+.form-control {
+    @include media-breakpoint-up('md') {
+        height: $input-height-md;
+    }
+
+    &::placeholder {
+        font-style: italic;
+    }
+
+    &.form-control--small {
+        @include font-size(12px);
+        height: rem(30px);
+    }
+
+    &.form-control--search {
+        @include media-breakpoint-up('md') {
+            border-radius: 5px 0 0 5px;
+            border-right: none;
+        }
+    }
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+}
+
+.search-with-icon {
+    box-shadow: $box-shadow;
+    position: relative;
+
+    &.search-with-icon--noshadow {
+        box-shadow: none;
+
+        .form-control {
+            border-color: $primary;
+
+            &:hover, &:focus {
+                box-shadow: $box-shadow;
+            }
+        }
+    }
+
+    button {
+        position: absolute;
+        right: rem(19px);
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 0;
+    }
+
+    .form-control {
+        border-color: rgba($gray-300, .3);
+        height: rem(40px);
+
+        &:focus {
+            border-color: $primary;
+        }
+    }
+}
+
+.checkbox-rect {
+    display: block;
+    margin-bottom: 0;
+    span {
+        background-color: $gray-400;
+        border: 1px solid $gray-400;
+        border-radius: 2px;
+        display: block;
+        @include font-size(12px);
+        padding: rem(8px) rem(5px);
+        text-align: center;
+    }
+    input {
+        @include sr-only();
+
+        &:checked ~ span {
+            color: $primary;
+            border-color: $primary;
+        }
+    }
+}
+
+.custom-checkbox {
+    .custom-control-label {
+        width: rem(20px);
+        &::before {
+            border-radius: 2px;
+            height: rem(20px);
+            width: rem(20px);
+            left: 0;
+        }
+
+        &::after {
+            background-size: 14px 11px;
+            height: rem(20px);
+            width: rem(20px);
+            left: 0;
+        }
+    }
+
+    .custom-control-input:checked ~ .custom-control-label::before {
+        background-color: $white;
+    }
+}
+
+label.error {
+    color: $danger;
+    display: block;
+    @include font-size(14px);
+    margin-top: rem(5px);
+}

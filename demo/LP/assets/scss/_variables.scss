@@ -1,0 +1,32 @@
+$gray-200: #F2F2F2;
+$gray-300: #E6E6E6;
+$gray-400: #F5F5F5;
+$gray-500: rgba(#707070, .5);
+$gray-600: #888;
+$gray-700: #232323;
+$gray-800: #333;
+$gray-900: #101010;
+$orange: #FFAE00;
+
+$container-max-widths: (
+  sm: 766px,
+  md: 767px,
+  lg: 960px,
+  xl: 1200px
+) !default;
+
+$font-family-base: 'Montserrat', sans-serif;
+$primary: #4080FE;
+
+$bg-gray: $gray-400;
+$border-color: $gray-500;
+$text-color: $gray-900;
+
+$footer-background: $gray-700;
+
+/* Form */
+$input-border-color: $gray-500;
+$input-border-radius: 5px;
+$input-placeholder-color: $gray-600;
+$custom-select-bg-size: 11.55px 7px;
+$custom-select-indicator: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11.551' height='7.01' viewBox='0 0 11.551 7.01'%3E%3Cpath id='Icon_awesome-chevron-down' data-name='Icon awesome-chevron-down' d='M5.724,15.507.584,10.367a.635.635,0,0,1,0-.9l.6-.6a.635.635,0,0,1,.9,0l4.093,4.074,4.093-4.074a.635.635,0,0,1,.9,0l.6.6a.635.635,0,0,1,0,.9L6.622,15.507A.635.635,0,0,1,5.724,15.507Z' transform='translate(-0.398 -8.683)' fill='%23bcbcbc'/%3E%3C/svg%3E%0A");

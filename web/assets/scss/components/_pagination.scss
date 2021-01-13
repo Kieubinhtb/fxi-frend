@@ -1,0 +1,16 @@
+.page-item {
+    margin-right: rem(12px);
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.page-link {
+    border-radius: 2px;
+
+    i {
+        @include font-size(20px);
+    }
+}
+

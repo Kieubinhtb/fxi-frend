@@ -1,0 +1,68 @@
+.review-info {
+    @include font-size(12px);
+    color: $gray-300;
+
+    @include media-breakpoint-up('md') {
+        @include font-size(14px);
+    }
+}
+
+.review-star {
+    color: $yellow;
+    display: inline-block;
+    line-height: 1;
+    position: relative;
+    white-space: nowrap;
+
+    > span {
+        display: inline-flex;
+
+        i {
+            margin: 0 2px;
+        }
+    }
+
+    &__mask {
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+}
+
+.rating {
+    display: inline-block;
+
+    &:hover {
+        label::after {
+            content: '\f005';
+        }
+    }
+
+    label {
+        float: left;
+        margin-bottom: 0;
+        padding-right: 5px;
+
+        &.active::after {
+            content: '\f005';
+        }
+
+        &:hover ~ label::after {
+            content: '\f006'
+        }
+    }
+}
+
+#commentForm {
+    .custom-control {
+        padding-left: 0;
+    }
+
+    .custom-control-label {
+        padding-top: 2px;
+        padding-left: rem(25px);
+        width: auto;
+    }
+}
+

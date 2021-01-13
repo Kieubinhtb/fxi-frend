@@ -1,0 +1,61 @@
+@import "variables";
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "reboot";
+@import "button";
+@import "title";
+@import "form";
+@import "components/top";
+@import "components/gift";
+@import "components/info";
+@import "components/about";
+@import "components/footer";
+
+.complete-page {
+    background: url('../images/bg-chart.svg') no-repeat center / cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    height: 100vh;
+    text-align: center;
+
+    @include media-breakpoint-up('md') {
+        @include font-size(18px);
+    }
+
+    svg {
+        height: auto;
+        margin: auto;
+        max-width: 60%;
+    }
+
+    h2 {
+        color: $primary;
+        @include font-size(20px);
+        font-weight: bold;
+        margin: 40px 0 18px;
+
+        @include media-breakpoint-up('md') {
+            @include font-size(30px);
+            margin-top: 80px;
+        }
+    }
+
+    .sns-block {
+        list-style: none;
+        padding-left: 0;
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+
+        @include media-breakpoint-up('md') {
+            margin-top: 100px;
+        }
+
+        li {
+            a {
+                margin: 0 15px;
+            }
+        }
+    }
+}

@@ -1,0 +1,120 @@
+.campaign-about {
+    padding: 50px 0 30px;
+
+    @include media-breakpoint-up('md') {
+        padding: 80px 0 53px;
+    }
+}
+
+.list-about {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+
+    li {
+        display: flex;
+        align-items: center;
+        @include font-size(16px);
+        font-weight: 600;
+        margin-bottom: 35px;
+
+        @include media-breakpoint-up('md') {
+            @include font-size(20px);
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &::before {
+            content: '';
+            background: url('../images/icon-checked.svg') no-repeat center / contain;
+            height: 20px;
+            width: 23px;
+            flex-shrink: 0;
+            margin-right: 15px;
+
+            @include media-breakpoint-up('md') {
+                margin-right: 29px;
+                height: 25px;
+                width: 28px;
+            }
+        }
+    }
+}
+
+.campaign-form {
+    background-color: $primary;
+    border-radius: 10px;
+    color: $white;
+    @include font-size(14px);
+    margin: 60px auto 0;
+    max-width: 1000px;
+    position: relative;
+    padding: 60px 15px 30px;
+    width: 100%;
+
+    @include media-breakpoint-up('md') {
+        @include font-size(16px);
+        margin-top: 167px;
+        padding: 119px 90px 70px;
+    }
+
+    &__ttl {
+        color: $yellow;
+        @include font-size(18px);
+        font-weight: 600;
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+
+        @include media-breakpoint-up('md') {
+            @include font-size(30px);
+        }
+    }
+
+    &__txt {
+        margin: 0 0 20px;
+        text-align: center;
+
+        @include media-breakpoint-up('md') {
+            margin-bottom: 40px;
+        }
+    }
+
+    &::before {
+        content: '';
+        background: url('../images/snow-bg03.svg') no-repeat center / contain;
+        height: 110px;
+        position: absolute;
+        top: -40px;
+        left: -9px;
+        right: -9px;
+        z-index: 10;
+
+        @include media-breakpoint-up('md') {
+            height: 210px;
+            top: -67px;
+        }
+    }
+
+    .form-row {
+        margin-bottom: 10px;
+        margin-left: -10px;
+        margin-right: -10px;
+
+        [class*="col-"] {
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-bottom: 10px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            @include media-breakpoint-up('md') {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

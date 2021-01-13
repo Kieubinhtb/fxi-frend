@@ -1,0 +1,52 @@
+.review-info {
+    @include font-size(14px);
+    color: $gray-300;
+}
+
+.review-star {
+    color: $yellow;
+    display: inline-block;
+    position: relative;
+    white-space: nowrap;
+
+    > span {
+        display: inline-block;
+    }
+
+    &__mask {
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+}
+
+.rating {
+    display: inline-block;
+
+    &:hover {
+        label::after {
+            content: '\f005';
+        }
+    }
+
+    label {
+        float: left;
+        margin-bottom: 0;
+        padding-right: 5px;
+
+        &.active::after {
+            content: '\f005';
+        }
+
+        &:hover ~ label::after {
+            content: '\f006'
+        }
+    }
+}
+
+.custom-control-label {
+    #commentForm & {
+        padding-top: 2px;
+    }
+}

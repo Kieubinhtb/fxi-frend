@@ -1,0 +1,77 @@
+.campaign-gift {
+    padding: 60px 0;
+
+    @include media-breakpoint-up('md') {
+        padding: 182px 0 80px;
+    }
+}
+
+.gift-list {
+    list-style: none;
+    margin-bottom: 40px;
+    padding-left: 0;
+
+    @include media-breakpoint-up('md') {
+        display: flex;
+        margin: 0 -13px 40px;
+    }
+
+    li {
+        margin-bottom: 30px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        @include media-breakpoint-up('md') {
+            flex: 0 33.33%;
+            max-width: 33.33%;
+            margin-bottom: 0;
+            padding: 0 13px;
+        }
+    }
+
+    .gift-item {
+        background-color: $primary;
+        border-radius: 10px;
+        color: $white;
+        padding: 60px 10px 20px;
+        position: relative;
+        text-align: center;
+
+        @include media-breakpoint-up('md')  {
+            padding-bottom: 40px;
+        }
+        
+        &::before {
+            content: '';
+            background: url('../images/snow-bg03.svg') no-repeat center / contain;
+            height: 76px;
+            position: absolute;
+            top: -20px;
+            left: -6px;
+            right: -6px;
+        }
+
+        &__img {
+            @include media-breakpoint-down('lg') {
+                img {
+                    max-width: 150px;
+                }
+            }
+        }
+
+        &__ttl {
+            @include font-size(16px);
+            font-weight: 400;
+            margin: 36px 0 6px;
+        }
+
+        &__price {
+            color: $yellow;
+            @include font-size(20px);
+            font-weight: bold;
+            margin: 0;
+        }
+    }
+}

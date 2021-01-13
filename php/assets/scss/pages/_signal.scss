@@ -1,0 +1,135 @@
+.signal-list {
+    list-style: none;
+    overflow: auto;
+    max-height: rem(975px);
+    margin-bottom: 0;
+    padding: rem(18px) rem(5px) 0 0;
+
+    &::-webkit-scrollbar {
+        width: 3px;
+    }
+    
+    &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background: #888;
+    }
+      
+
+    li {
+        margin-bottom: rem(30px);
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .signal-item {
+        background-color: $gray-400;
+        border-top: 1px solid $primary;
+        position: relative;
+        padding: rem(30px) rem(10px) rem(15px);
+
+        @include media-breakpoint-up('md') {
+            padding: rem(34px) rem(20px) rem(34px) rem(100px);
+        }
+
+        &__time {
+            background-color: $white;
+            border: 1px solid $primary;
+            border-radius: 3px;
+            position: absolute;
+            left: 0;
+            top: rem(-18px);
+            @include font-size(12px);
+            padding: rem(5px) rem(12px);
+            z-index: 20;
+
+            @include media-breakpoint-up('md') {
+                @include font-size(16px);
+                padding: rem(5px) rem(20px);
+            }
+        }
+
+        &__img {
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: rem(10px);
+            width: rem(30px);
+
+            @include media-breakpoint-up('md') {
+                position: absolute;
+                left: rem(20px);
+                top: rem(33px);
+                width: rem(60px);
+            }
+        }
+
+        &__name {
+            @include font-size(14px);
+            font-weight: bold;
+            margin: 0;
+
+            @include media-breakpoint-up('md') {
+                @include font-size(16px);
+            }
+        }
+
+        &__view {
+            color: $gray-300;
+            @include font-size(10px);
+            margin-left: auto;
+
+            @include media-breakpoint-up('md') {
+                @include font-size(12px);
+            }
+        }
+
+        &__txt {
+            @include font-size(14px);
+        }
+    }
+}
+
+.subscribe-wrap {
+    background-color: $green-dark;
+    color: $white;
+    padding: rem(35px) 0;
+
+    &__txt {
+        color: rgba($white, .8);
+        @include font-size(14px);
+        font-weight: bold;
+        text-align: center;
+
+        @include media-breakpoint-up('md') {
+            @include font-size(20px);
+            text-align: left;
+        }
+
+        span {
+            color: $white;
+        }
+    }
+
+    .form-subscribe {
+        @include font-size(14px);
+        max-width: rem(484px);
+    
+        .form-control--mail {
+            background: $white $icon-mail no-repeat rem(16px) center;
+            border-radius: 7px 0 0 7px;
+            padding-left: rem(41px);
+        }
+    
+        .btn-send {
+            @include font-size(12px);
+            border-radius: 0 7px 7px 0;
+            font-weight: bold;
+            flex-shrink: 0;
+            width: rem(100px);
+        }
+    }    
+}

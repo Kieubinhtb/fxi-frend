@@ -1,0 +1,73 @@
+server {
+    #
+    root /var/www/html/coinsaigon.com/wordpress;
+    #
+    index  index.php index.html index.htm;
+    #
+    server_name  coinsaigon.com www.coinsaigon.com;
+    
+    #    
+    access_log  /var/www/html/coinsaigon.com/wordpress/nginx-access.log;
+    error_log   /var/www/html/coinsaigon.com/wordpress/nginx-error.log;
+
+    # Enable HSTS. This forces SSL on clients that respect it, most modern browsers. The includeSubDomains flag is optional.
+    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains";
+
+    if ($http_host ~* "^www.coinsaigon.com"){
+        rewrite ^(.*)$ https://coinsaigon.com$1 redirect;
+    }
+
+    location / {
+        try_files $uri $uri/ /index.php?$args;
+        proxy_set_header   X-Real-IP             $remote_addr;
+        proxy_set_header   X-Forwarded-For       $proxy_add_x_forwarded_for;
+        proxy_set_header   X-Forwarded-Proto https;
+       # proxy_set_header X-Forwarded-Host $host;
+        proxy_set_header X-Forwarded-Proto $scheme;
+              
+    }
+
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass    unix:/var/run/php/php7.1-fpm.sock;
+        fastcgi_param   SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_params;
+        client_max_body_size 100M;
+    }
+
+    # Media: images, icons, video, audio, HTC
+    location ~* \.(?:jpg|jpeg|gif|png|ico|cur|gz|svg|svgz|mp4|ogg|ogv|webm|htc)$ {
+        expires 7d;
+        access_log off;
+        add_header Cache-Control "public";
+    }
+
+    # CSS and Javascript
+    location ~* \.(?:css|js)$ {
+        expires 1M;
+        access_log off;
+        add_header Cache-Control "public";
+    }
+
+    listen [::]:443 ssl; # managed by Certbot
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/coinsaigon.com/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/coinsaigon.com/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+# Redirect HTTP -> HTTPS
+server {
+    if ($host = coinsaigon.com) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+    if ($host = www.coinsaigon.com){
+        return 301 https://coinsaigon.com$request_uri;
+    }
+
+    listen 80;
+    server_name  coinsaigon.com www.coinsaigon.com;
+    return 404; # managed by Certbot
+}

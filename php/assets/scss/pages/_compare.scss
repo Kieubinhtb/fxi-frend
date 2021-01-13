@@ -1,0 +1,93 @@
+.compare-form {
+    margin-top: rem(30px);
+    @include media-breakpoint-up('md') {
+        margin-top: rem(40px);
+    }
+
+    &__note {
+        color: $gray-300;
+        @include font-size(14px);
+        font-style: italic;
+        margin-bottom: rem(10px);
+    }
+
+    .btn-compare {
+        @include font-size(14px);
+        height: 100%;
+        width: rem(90px);
+
+        @include media-breakpoint-up('md') {
+            width: rem(150px);
+        }
+    }
+
+    .bs-actionsbox {
+        margin-bottom: rem(10px);
+        padding: 0;
+
+        .btn-group button {
+            background-color: transparent;
+            border: 0;
+            color: $red;
+            margin-left: auto;
+            text-align: right;
+            width: auto;
+            flex: none;
+        }
+    }
+
+    .bs-select-all {
+        display: none;
+    }
+
+    .input-compare {
+        @include font-size(14px);
+        min-height: rem(40px);
+        padding: rem(10px);
+
+        @include media-breakpoint-up('sm') {
+            padding: rem(10px) rem(20px);
+        }
+
+        @include media-breakpoint-up('md') {
+            min-height: rem(50px);
+        }
+    
+        &:hover, &:active {
+            background-color: transparent !important;
+            color: inherit !important;
+        }
+
+        .filter-option {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .bs-searchbox {
+        margin-bottom: rem(23px);
+    }
+
+    .show > .btn-outline-primary.dropdown-toggle {
+        background-color: transparent !important;
+        color: inherit !important;
+    }
+
+    .bootstrap-select {
+        >.dropdown-toggle {
+            white-space: pre-wrap;
+        }
+    }
+}
+
+.compare-content {
+    .compare-logo {
+        @include media-breakpoint-up('md'){
+            text-align: center;
+        }
+        
+        img {
+            max-height: rem(70px);
+        }
+    }
+}

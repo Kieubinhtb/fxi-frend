@@ -1,0 +1,116 @@
+.nav-tabs--noborder {
+    .nav-link {
+        background-color: transparent;
+        border: none;
+        color: inherit;
+        font-weight: $font-weight-medium;
+        margin-right: rem(25px);
+        padding: 0 0 rem(6px);
+
+        @include media-breakpoint-up('md') {
+            margin-right: rem(60px);
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &.active {
+            background-color: transparent;
+            border-bottom: 3px solid $primary;
+            color: $primary;
+        }
+    }
+}
+
+.nav-tabs--compare {
+    .nav-link {
+        background-color: $gray-100;
+        border: none;
+        border-radius: $border-radius;
+        display: flex;
+        align-items: center;
+        margin-right: rem(15px);
+        position: relative;
+        padding: 14px 5px;
+        text-align: center;
+
+        &::after {
+            content: '';
+            background-color: $white;
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 5px;
+            transform: skewX(-7deg) translateX(-50%);
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &.active {
+            background-color: $primary;
+
+            &::after {
+                opacity: .4;
+            }
+
+            img {
+                filter: brightness(0) invert(1);
+            }
+        }
+
+        span {
+            padding: 0 10px;
+            text-align: center;
+            width: 50%;
+
+            img {
+                margin: auto;
+            }
+        }
+    }
+}
+
+.nav-tabs-slider {
+    display: flex;
+    
+    .nav-link {
+        margin-right: 0;
+
+        @include media-breakpoint-up('md') {
+            margin-right: rem(15px);
+        }
+    }
+
+    .slick-dots {
+        display: flex;
+        justify-content: center;
+        order: -2;
+        list-style: none;
+        padding-left: 0;
+
+        li {
+            margin: 0 2px;
+
+            &.slick-active {
+                button {
+                    background-color: $primary;
+                }
+            }
+
+            button {
+                background-color: $dot-color;
+                border: none;
+                color: transparent;
+                display: block;
+                font-size: 0;
+                outline: none;
+                height: rem(3px);
+                width: rem(25px);
+            }
+        }
+    }
+}

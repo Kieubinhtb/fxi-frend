@@ -1,0 +1,40 @@
+.btn-danger {
+    padding: 12px 5px;
+    width: 170px;
+}
+
+.btn-submit {
+    border-radius: 10px;
+    color: $primary;
+    @include font-size(14px);
+    font-weight: 600;
+    height: 50px;
+    margin-top: 20px;
+    width: 100%;
+
+    @include media-breakpoint-up('md') {
+        @include font-size(16px);
+        margin-top: 40px;
+    }
+}
+
+.btn-tel {
+    @include font-size(14px);
+    font-weight: bold;
+    padding: 12px 10px;
+    width: 197px;
+
+    @include media-breakpoint-up('md') {
+        @include font-size(16px);
+    }
+
+    &:hover {
+        img {
+            filter: brightness(0) invert(1);
+        }
+    }
+
+    img {
+        transition: .3s ease;
+    }
+}

@@ -1,0 +1,113 @@
+#footer {
+    background-color: $footer-background;
+    color: $footer-color;
+    padding: rem(40px) 0;
+
+    @include media-breakpoint-up('md') {
+        padding: rem(60px) 0;
+    }
+
+    .btn-tel {
+        &:hover {
+            color: $primary;
+        }
+    }
+}
+
+.f-right {
+    @include media-breakpoint-up('md') {
+        border-left: 1px solid rgba($white, .3);
+        padding-left: rem(16px);
+        width: 60%;
+    }
+
+    @include media-breakpoint-up('lg') {
+        padding-left: rem(80px);
+    }
+}
+
+.f-sologan {
+    color: rgba($white, .6);
+    @include font-size(12px);
+    margin-top: rem(17px);
+
+    @include media-breakpoint-up('md')  {
+        @include font-size(14px);
+        margin-top: rem(30px);
+    }
+}
+
+.f-contact {
+    margin-top: rem(18px);
+
+    @include media-breakpoint-up('md') {
+        margin-top: rem(60px);
+    }
+}
+
+.f-form {
+    @include font-size(14px);
+    max-width: rem(484px);
+
+    .form-control--mail {
+        background: $white $icon-mail no-repeat rem(16px) center;
+        border-radius: 7px 0 0 7px;
+        padding-left: rem(41px);
+    }
+
+    .btn-send {
+        @include font-size(12px);
+        border-radius: 0 7px 7px 0;
+        font-weight: bold;
+        width: rem(100px);
+    }
+}
+
+.f-nav-ttl {
+    @include font-size(20px);
+    font-weight: bold;
+    margin-bottom: rem(36px);
+    text-transform: uppercase;
+}
+
+.f-list-nav {
+    border-top: 1px solid rgba($white, .2);
+    border-bottom: 1px solid rgba($white, .2);
+    columns: 3;
+    list-style: none;
+    margin: rem(30px) 0 rem(25px);
+    padding: rem(35px) 0;
+
+    > li {
+        a {
+            color: rgba($white, .6);
+            @include font-size(11px);
+        }
+    }
+}
+
+.f-col {
+    ul {
+        list-style: none;
+        padding-left: 0;
+
+        > li {
+            margin-bottom: rem(6px);
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            a {
+                color: rgba($white, .6);
+                @include font-size(14px);
+            }
+        }
+    }
+}
+
+.before-footer {
+    .bg-white & {
+        background-color: $white;
+    }
+}

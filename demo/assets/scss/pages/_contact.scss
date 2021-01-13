@@ -1,0 +1,51 @@
+.contact-wrap {
+    border-radius: $border-radius;
+    overflow: hidden;
+
+    &__box {
+        height: 100%;
+        padding: rem(40px) rem(20px);
+
+        @include media-breakpoint-up('lg') {
+            padding: rem(40px);
+        }
+
+        .form-control {
+            border-width: 0;
+        }
+
+        textarea.form-control {
+            height: rem(130px);
+        }
+    }
+
+    .company-item {
+        color: $white;
+        display: flex;
+
+        .icon {
+            flex-shrink: 0;
+            margin-right: rem(20px);
+            width: rem(18px);
+        }
+    }
+}
+
+.contact-map {
+    border: 1px solid rgba($gray-300, .3);
+    margin-top: rem(40px);
+    height: rem(200px);
+    padding: rem(6px);
+    width: 100%;
+
+    @include media-breakpoint-up('md') {
+        height: rem(600px);
+        margin-top: rem(80px);
+        padding: rem(20px);
+    }
+
+    iframe {
+        height: 100%;
+        width: 100%;
+    }
+}
