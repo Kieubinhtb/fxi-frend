@@ -1,0 +1,8 @@
+.page-footer {
+    background-color: $black;
+    color: $white;
+    @include font-size(12px);
+    font-weight: 400;
+    padding: rem(17px) 0;
+    text-align: center;
+}

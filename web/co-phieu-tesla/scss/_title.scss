@@ -1,0 +1,28 @@
+.hline {
+    @include font-size(20px);
+    font-weight: 400;
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 7px;
+    z-index: 5;
+
+    @include media-breakpoint-up('md') {
+        @include font-size(28px);
+        margin-bottom: 40px;
+    }
+
+    &::before {
+        content: '';
+        background-color: $red;
+        width: 15px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+        
+        @include media-breakpoint-up('md') {
+            width: 20px;
+        }
+    }
+}

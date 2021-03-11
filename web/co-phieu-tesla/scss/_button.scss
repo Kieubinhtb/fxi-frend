@@ -1,0 +1,52 @@
+.btn-center {
+    margin: auto;
+}
+
+.btn-main {
+    color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .3s ease;
+    @include font-size(14px);
+    font-weight: $semi-bold;
+    position: relative;
+    height: 40px;
+    width: 140px;
+    z-index: 5;
+
+    @include media-breakpoint-up('md') {
+        color: $body-color;
+        @include font-size(16px);
+        height: 50px;
+        width: 180px;
+    }
+
+    &::after {
+        content: '';
+        background-color: $red;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        transition: .3s ease;
+        z-index: -1;
+
+        @include media-breakpoint-up('md') {
+            width: 55px;
+        }
+    }
+
+    @include hover() {
+        color: $white;
+
+        &::after {
+            width: 100%;
+        }
+    }
+
+    &.btn-main--white {
+        color: $white;
+    }
+}

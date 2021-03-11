@@ -94,6 +94,11 @@ $config = [
                 'en/dau-tu/merry-christmas-2020<link:[\/]?>' => 'site/landing-page-three-en',
                 'en/dau-tu/merry-christmas-2020/thank-you<link:[\/]?>' => 'site/landing-page-four-en',
 
+                'chung-khoan/co-phieu-tesla<link:[\/]?>' => 'site/landing-page-five',
+                'chung-khoan/co-phieu-tesla/thank-you<link:[\/]?>' => 'site/landing-page-five-thank',
+
+                'cuoc-thi/big-four-trading-demo-contest<link:[\/]?>' => 'site/landing-page-six',
+
                 've-chung-toi.html' => 'site/vechungtoi',
                 '<controller:[\w-]+>/<action:[\w-]+>' => '<controller>/<action>', //link thuan
             ]

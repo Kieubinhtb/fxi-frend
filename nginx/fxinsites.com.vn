@@ -1,32 +1,30 @@
 server {
     #
-    root /var/www/html/coinsaigon.com/wordpress;
-    #root /var/www/html/fxiv2/web;
+    root /var/www/html/fxiv2/web;
     #
     index  index.php index.html index.htm;
     #
-    server_name  coinsaigon.com www.coinsaigon.com;
+    server_name  fxinsites.com.vn www.fxinsites.com.vn;
     
     #    
-    access_log  /var/www/html/coinsaigon.com/wordpress/nginx-access.log;
-    error_log   /var/www/html/coinsaigon.com/wordpress/nginx-error.log;
+    access_log  /var/www/html/fxiv2/nginx-access.log;
+    error_log   /var/www/html/fxiv2/nginx-error.log;
 
     # Enable HSTS. This forces SSL on clients that respect it, most modern browsers. The includeSubDomains flag is optional.
     add_header Strict-Transport-Security "max-age=31536000; includeSubDomains";
 
-    if ($http_host ~* "^www.coinsaigon.com"){
-        rewrite ^(.*)$ https://coinsaigon.com$1 redirect;
+    if ($http_host ~* "^www.fxinsites.com.vn"){
+        rewrite ^(.*)$ https://fxinsites.com.vn$1 redirect;
     }
 
     location / {
         try_files $uri $uri/ /index.php?$args;
         proxy_set_header   X-Real-IP             $remote_addr;
         proxy_set_header   X-Forwarded-For       $proxy_add_x_forwarded_for;
-        proxy_set_header   X-Forwarded-Proto https;
+        proxy_set_header   X-Forwarded-Proto https; 
        # proxy_set_header X-Forwarded-Host $host;
-        proxy_set_header X-Forwarded-Proto $scheme;
-              
-    }
+        proxy_set_header X-Forwarded-Proto $scheme;              
+    }  
 
     location ~ \.php$ {
         include snippets/fastcgi-php.conf;
@@ -37,7 +35,7 @@ server {
     }
 
     # Media: images, icons, video, audio, HTC
-    location ~* \.(?:jpg|jpeg|gif|png|ico|cur|gz|svg|svgz|mp4|ogg|ogv|webm|htc)$ {
+    location ~* \.(?:jpg|jpeg|gif|png|ico|cur|gz|svg|svgz|mp4|ogg|ogv|webm|webp|htc|xml|svg+xml)$ {
         expires 7d;
         access_log off;
         add_header Cache-Control "public";
@@ -45,30 +43,32 @@ server {
 
     # CSS and Javascript
     location ~* \.(?:css|js)$ {
-        expires 1M;
+        expires 7d;
         access_log off;
         add_header Cache-Control "public";
     }
 
     listen [::]:443 ssl; # managed by Certbot
     listen 443 ssl; # managed by Certbot
-    ssl_certificate /etc/letsencrypt/live/coinsaigon.com/fullchain.pem; # managed by Certbot
-    ssl_certificate_key /etc/letsencrypt/live/coinsaigon.com/privkey.pem; # managed by Certbot
+    ssl_certificate /var/www/html/fxiv2/ssl-vn/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /var/www/html/fxiv2/ssl-vn/privkey.pem; # managed by Certbot
     include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
     ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
-
 }
+
 # Redirect HTTP -> HTTPS
 server {
-    if ($host = coinsaigon.com) {
-        return 301 https://$host$request_uri;
-    } # managed by Certbot
-
-    if ($host = www.coinsaigon.com){
-        return 301 https://coinsaigon.com$request_uri;
-    }
 
     listen 80;
-    server_name  coinsaigon.com www.coinsaigon.com;
-    return 404; # managed by Certbot
+    server_name www.fxinsites.com.vn fxinsites.com.vn;
+
+    if ($host = www.fxinsites.com.vn){
+        return 301 https://fxinsites.com.vn$request_uri;
+    }
+
+    if ($host = fxinsites.com.vn) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot    
+    
+    return 301 https://fxinsites.com.vn$request_uri;
 }

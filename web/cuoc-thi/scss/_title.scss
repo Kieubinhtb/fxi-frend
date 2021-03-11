@@ -1,0 +1,15 @@
+.hline01 {
+    border-bottom: 1px solid $gray-200;
+    color: $primary;
+    @include font-size(26px);
+    line-height: 1.33;
+    font-weight: bold;
+    margin-bottom: rem(15px);
+    padding-bottom: rem(10px);
+
+    @include media-breakpoint-up('md') {
+        @include font-size(36px);
+        margin-bottom: rem(30px);
+        padding-bottom: rem(20px);
+    }
+}

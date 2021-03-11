@@ -478,4 +478,23 @@ class SiteController extends Controller
     {
         $this->redirect('/thong-tin-danh-gia-san-' . str_replace("/", "", $link));
     }
+
+    public function actionLandingPageFive()
+    {
+        $this->layout = 'empty-main';
+        return $this->render('co-phieu-tesla/landing-page-five');
+    }
+    
+    public function actionLandingPageFiveThank()
+    {
+        $this->layout = 'empty-main';
+        return $this->render('co-phieu-tesla/landing-page-five-thank');
+    }
+
+    public function actionLandingPageSix()
+    {
+        $this->layout = 'empty-main';
+        return $this->render('cuoc-thi/index');
+    }
+    
 }

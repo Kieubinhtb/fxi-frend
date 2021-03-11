@@ -1,0 +1,266 @@
+img {
+    max-width: 100%;
+}
+
+.c-red {
+    color: $red;
+}
+
+.main-banner {
+    background: url('../images/giao-dich-co-phieu-tesla-ngay-tai-nha.webp') no-repeat center top / cover;
+    color: $white;
+    height: 450px;
+    position: relative;
+    padding-top: 139px;
+
+    @include media-breakpoint-up('md') {
+        height: 750px;
+    }
+
+    &__ttl {
+        @include font-size(26px);
+        font-weight: $semi-bold;
+        margin-bottom: 15px;
+
+        @include media-breakpoint-up('md') {
+            @include font-size(34px);
+        }
+    }
+
+    &__txt {
+        @include font-size(14px);
+        margin-bottom: 30px;
+
+        @include media-breakpoint-up('md') {
+            @include font-size(24px);
+            margin-bottom: 50px;
+        }
+
+        small {
+            @include font-size(14px);
+            vertical-align: top;
+
+            @include media-breakpoint-up('md') {
+                @include font-size(16px);
+            }
+        }
+    }
+
+    &__copyright {
+        @include font-size(11px);
+        position: absolute;
+        right: 15px;
+        bottom: 10px;
+        margin: 0;
+
+        @include media-breakpoint-up('md') {
+            @include font-size(14px);
+            right: 69px;
+            bottom: 43px;
+        }
+    }
+}
+
+.section {
+    padding: 40px 0 20px;
+
+    @include media-breakpoint-up('md') {
+        padding: 60px 0;
+    }
+}
+
+.list {
+    margin: 0 -7px;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    @include media-breakpoint-up('md') {
+        margin: 0 -15px;
+    }
+
+    > li {
+        list-style: none;
+        flex: 0 50%;
+        max-width: 50%;
+        padding: 0 7px;
+
+        &:nth-child(n+3) {
+            margin-top: 20px;
+        }
+
+        @include media-breakpoint-up('md') {
+            flex: 0 33.33%;
+            max-width: 33.33%;
+            padding: 0 15px;
+
+            &:nth-child(n+3) {
+                margin-top: 0;
+            }
+
+            &:nth-child(n+4) {
+                margin-top: 38px;
+            }
+        }
+
+        
+    }
+}
+
+.news-item {
+    &__img {
+        margin-bottom: 0;
+        overflow: hidden;
+
+        img {
+            transition: .3s ease;
+        }
+
+        @include hover() {
+            img {
+                transform: scale(1.1) rotate(-1deg);
+            }
+        }
+    }
+
+    &__ttl {
+        @include font-size(14px);
+        font-weight: $semi-bold;
+        margin-bottom: 6px;
+        margin-top: 10px;
+
+        @include media-breakpoint-up('md') {
+            @include font-size(18px);
+            margin-top: 20px;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+
+            @include hover() {
+                color: $primary;
+            }
+        }
+    }
+
+    &__copy {
+        @include font-size(11px);
+        color: $gray-400;
+        margin-bottom: 0;
+
+        @include media-breakpoint-up('md') {
+            @include font-size(14px);
+        }
+    }
+}
+
+.form-wrap {
+    @include media-breakpoint-up('lg') {
+        display: flex;
+    }
+
+    &__left {
+        background-color: $gray-600;
+        color: $white;
+        padding: 20px;
+
+        @include media-breakpoint-up('lg') {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44.27%;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+
+            li {
+                display: flex;
+                align-items: flex-start;
+                list-style: none;
+                @include font-size(14px);
+                position: relative;
+                margin-bottom: 15px;
+
+                @include media-breakpoint-up('md') {
+                    @include font-size(16px);
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+                &::before {
+                    content: '';
+                    background-color: $red;
+                    height: 7px;
+                    width: 7px;
+                    margin-right: 15px;
+                    margin-top: 8px;
+
+                    @include media-breakpoint-up('md')  {
+                        margin-right: 23px;
+                    }
+                }
+            }
+        }
+    }
+
+    &__right {  
+        background-color: $gray-100;
+        padding: 20px;
+
+        @include media-breakpoint-up('lg') {
+            padding: 40px 70px 40px 53px;
+            width: calc(100% - 44.27%);
+        }
+    }
+}
+
+.complete-page {
+    background: url('../images/bg-chart.svg') no-repeat center / cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    height: 100vh;
+    text-align: center;
+
+    @include media-breakpoint-up('md') {
+        @include font-size(18px);
+    }
+
+    svg {
+        height: auto;
+        margin: auto;
+        max-width: 60%;
+    }
+
+    h2 {
+        color: $primary;
+        @include font-size(20px);
+        font-weight: bold;
+        margin: 40px 0 18px;
+
+        @include media-breakpoint-up('md') {
+            @include font-size(30px);
+            margin-top: 80px;
+        }
+    }
+
+    .sns-block {
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+
+        @include media-breakpoint-up('md') {
+            margin-top: 100px;
+        }
+
+        li {
+            list-style: none;
+            margin: 0 20px;
+        }
+    }
+}

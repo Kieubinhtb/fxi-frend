@@ -6,7 +6,7 @@ server {
     #
     index /backend/web/index.php;
     #
-    server_name  backend.fxinsites.com;
+    server_name  backend.fxinsites.com.vn;
     
     #    
     access_log  /var/www/html/backend.fxinsites/nginx-access.log;
@@ -54,8 +54,8 @@ server {
 
     listen [::]:443 ssl; # managed by Certbot
     listen 443 ssl; # managed by Certbot
-    ssl_certificate /etc/letsencrypt/live/backend.fxinsites.com/fullchain.pem; # managed by Certbot
-    ssl_certificate_key /etc/letsencrypt/live/backend.fxinsites.com/privkey.pem; # managed by Certbot
+    ssl_certificate /var/www/html/backend.fxinsites/ssl-vn/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /var/www/html/backend.fxinsites/ssl-vn/privkey.pem; # managed by Certbot
     include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
     ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
 
@@ -63,12 +63,11 @@ server {
 }
 # Redirect HTTP -> HTTPS
 server {
-    if ($host = backend.fxinsites.com) {
+    if ($host = backend.fxinsites.com.vn) {
         return 301 https://$host$request_uri;
     } # managed by Certbot
 
     listen 80;
-    server_name  backend.fxinsites.com;
+    server_name  backend.fxinsites.com.vn;
     return 404; # managed by Certbot
 }
-

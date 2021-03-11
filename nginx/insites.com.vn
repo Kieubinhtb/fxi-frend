@@ -1,11 +1,15 @@
 server {
-    server_name insites.com.vn;
+    server_name insites.com.vn www.insites.com.vn;
 
     access_log /var/log/nginx/insites_com_vn_access.log;
     error_log  /var/log/nginx/insites_com_vn_error.log;
 
     root /var/www/html/insites;
-    index index.html;
+    index index.html index.php;
+    
+    if ($http_host ~* "^www.insites.com.vn"){
+        rewrite ^(.*)$ https://insites.com.vn$1 redirect;
+    }
 
     location / {
         try_files $uri $uri/ =404;
@@ -23,10 +27,12 @@ server {
         return 301 https://$host$request_uri;
     } # managed by Certbot
 
+    if ($host = www.insites.com.vn) {
+        return 301 https://insites.com.vn$request_uri;
+    } # managed by Certbot
   
     listen 80;
-    server_name insites.com.vn;
+    server_name insites.com.vn www.insites.com.vn;
     return 404; # managed by Certbot
-
 
 }

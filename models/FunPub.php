@@ -388,7 +388,7 @@ class FunPub extends Model
         Yii::$app->view->registerMetaTag([
             //'name' => 'og:site_name',
             'property' => 'og:site_name',
-            'content' => 'fxinsites.com',
+            'content' => $_SERVER['HTTP_HOST'],
         ]);
         Yii::$app->view->registerMetaTag([
             //'name' => 'og:title',
@@ -409,7 +409,7 @@ class FunPub extends Model
         Yii::$app->view->registerMetaTag([
             //'name' => 'og:image',
             'property' => 'og:image',
-            'content' => $data['image'] ? $data['image'] : Yii::$app->params['ssl'] . '://' . $_SERVER['HTTP_HOST'] . '/assets/images/logo.png',
+            'content' => $data['image'] ? $data['image'] : Yii::$app->params['ssl'] . '://' . $_SERVER['HTTP_HOST'] . '/assets/images/baner-fx-02.jpg',
         ]);
         /*
         Yii::$app->view->registerMetaTag([

@@ -1,17 +1,21 @@
 server {
     #
-    root /var/www/html/api.fxinsites/api/web;
+    root /var/www/html/blog.affinsites.vn/wordpress;
     #
     index  index.php index.html index.htm;
     #
-    server_name  api.fxinsites.com;
+    server_name  blog.affinsites.vn www.blog.affinsites.vn;
     
     #    
-    access_log  /var/www/html/api.fxinsites/nginx-access.log;
-    error_log   /var/www/html/api.fxinsites/nginx-error.log;
+    access_log  /var/www/html/blog.affinsites.vn/wordpress/nginx-access.log;
+    error_log   /var/www/html/blog.affinsites.vn/wordpress/nginx-error.log;
 
     # Enable HSTS. This forces SSL on clients that respect it, most modern browsers. The includeSubDomains flag is optional.
     add_header Strict-Transport-Security "max-age=31536000; includeSubDomains";
+
+    if ($http_host ~* "^www.blog.affinsites.vn"){
+        rewrite ^(.*)$ https://affinsites.vn$1 redirect;
+    }
 
     location / {
         try_files $uri $uri/ /index.php?$args;
@@ -19,13 +23,12 @@ server {
         proxy_set_header   X-Forwarded-For       $proxy_add_x_forwarded_for;
         proxy_set_header   X-Forwarded-Proto https;
        # proxy_set_header X-Forwarded-Host $host;
-        proxy_set_header X-Forwarded-Proto $scheme;
-              
+        proxy_set_header X-Forwarded-Proto $scheme;              
     }
 
     location ~ \.php$ {
         include snippets/fastcgi-php.conf;
-        fastcgi_pass    unix:/var/run/php/php7.2-fpm.sock;
+        fastcgi_pass    unix:/var/run/php/php7.1-fpm.sock;
         fastcgi_param   SCRIPT_FILENAME $document_root$fastcgi_script_name;
         include fastcgi_params;
 
@@ -48,21 +51,23 @@ server {
 
     #listen [::]:443 ssl; # managed by Certbot
     #listen 443 ssl; # managed by Certbot
-    #ssl_certificate /etc/letsencrypt/live/api.fxinsites/fullchain.pem; # managed by Certbot
-    #ssl_certificate_key /etc/letsencrypt/live/api.fxinsites/privkey.pem; # managed by Certbot
+    #ssl_certificate /etc/letsencrypt/live/blog.affinsites.vn/fullchain.pem; # managed by Certbot
+    #ssl_certificate_key /etc/letsencrypt/live/blog.affinsites.vn/privkey.pem; # managed by Certbot
     #include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
     #ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
-
 
 }
 # Redirect HTTP -> HTTPS
 server {
-    #if ($host = api.fxinsites.com) {
-    #    return 301 https://$host$request_uri;
-    #} # managed by Certbot
+    if ($host = blog.affinsites.vn) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+    if ($host = www.blog.affinsites.vn){
+        return 301 https://blog.affinsites.vn$request_uri;
+    }
 
     listen 80;
-    server_name  api.fxinsites.com;
+    server_name stocksaigon.net www.stocksaigon.net;
     return 404; # managed by Certbot
 }
-
